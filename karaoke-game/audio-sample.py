@@ -1,6 +1,9 @@
 import pyaudio
 import numpy as np
+import matplotlib
 from matplotlib import pyplot as plt
+
+matplotlib.use('Qt5Agg')
 
 # Set up audio stream
 # reduce chunk size and sampling rate for lower latency
@@ -41,13 +44,16 @@ plt.show()
 
 # continuously capture and plot audio singal
 while True:
+    print('recording')
     # Read audio data from stream
-    data = stream.read(CHUNK_SIZE)
+    data = stream.read(CHUNK_SIZE, exception_on_overflow=False)
 
     # Convert audio data to numpy array
     data = np.frombuffer(data, dtype=np.int16)
+    print(data)
     line.set_ydata(data)
 
     # Redraw plot
     fig.canvas.draw()
     fig.canvas.flush_events()
+
