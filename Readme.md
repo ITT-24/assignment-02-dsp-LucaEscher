@@ -6,8 +6,8 @@ pip install -r requirements.txt
 ```
 
 ## Troubleshooting
-If you are on a mac you might to install portaudio first to your device in order to use PyAudio.
-It also might help to install pyAudio with sudo instead of pip.
+- If you are on a mac you might have to install portaudio first to your device in order to use PyAudio.
+- It also might help to install pyAudio with sudo instead of pip.
 
 # Karaoke Game
 
