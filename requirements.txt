@@ -8,6 +8,12 @@ packaging==24.0
 pillow==10.3.0
 PyAudio==0.2.14
 pyglet==2.0.15
+pynput==1.7.6
+pyobjc-core==10.2
+pyobjc-framework-ApplicationServices==10.2
+pyobjc-framework-Cocoa==10.2
+pyobjc-framework-CoreText==10.2
+pyobjc-framework-Quartz==10.2
 pyparsing==3.1.2
 PyQt5==5.15.10
 PyQt5-Qt5==5.15.13

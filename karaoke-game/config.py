@@ -1,7 +1,7 @@
 import pyaudio
 
-# Kopiert von audio-sample.py -------------
-CHUNK_SIZE = 1024  # Number of audio frames per buffer
+# Kopiert von audio-sample.py und leicht angepasst -------------
+CHUNK_SIZE = 4096  # Number of audio frames per buffer
 FORMAT = pyaudio.paInt16  # Audio format
 CHANNELS = 1  # Mono audio
 RATE = 44100  # Audio sampling rate (Hz)

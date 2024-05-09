@@ -1,5 +1,3 @@
-from config import RATE
-import numpy as np
 import pyglet
 import random
 
@@ -9,6 +7,9 @@ FREQUENCY_B = 200
 FREQUENCY_C = 380
 FREQUENCY_D = 350
 FREQUENCY_E = 400
+
+GAME_SPEED = 5
+NOTE_SPACE = 150
 
 
 class Notes:
@@ -20,15 +21,11 @@ class Notes:
         self.notes_width = width
         self.notes = self.generate_notes()
 
-    # Generiert mit ChatGPT -----
-    def generate_random_frequencies(self, length):
-        # Definiere die vordefinierten Frequenzen und ihre Gewichtungen
+    # Generiert mit ChatGPT und von mir angepasst-----
+    def generate_random_frequencies(self, length: int):
         frequencies = [FREQUENCY_A, FREQUENCY_B, FREQUENCY_C, FREQUENCY_D, FREQUENCY_E]
-        weights = [1, 1, 1, 1, 1]  # gleiche Gewichtung für alle Frequenzen
-
-        # Erzeuge ein Array mit zufälligen Frequenzen basierend auf den Gewichtungen
+        weights = [1, 1, 1, 1, 1]
         random_frequencies = random.choices(frequencies, weights=weights, k=length)
-
         return random_frequencies
     # ---------------------------------
 
@@ -36,11 +33,10 @@ class Notes:
         # Ein Stück soll 10 Noten haben
         frequencies = self.generate_random_frequencies(11)
         notes = []
-        space = 120
         for index, frequency in enumerate(frequencies):
             notes.append(
                 pyglet.shapes.Rectangle(
-                    x=self.window_width + index * space,
+                    x=self.window_width + index * NOTE_SPACE,
                     y=frequency,
                     height=8,
                     width=self.notes_width,
@@ -52,4 +48,4 @@ class Notes:
 
     def start_notes(self):
         for note in self.notes:
-            note.x -= 2
+            note.x -= GAME_SPEED

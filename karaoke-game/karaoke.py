@@ -19,10 +19,11 @@ def on_key_press(symbol, modifiers):
         global game
         game.game_state = 1
 
+
 @window.event
 def on_draw():
     window.clear()
-    #aus audio-sample.py kopiert -----------
+    # aus audio-sample.py kopiert -----------
     data = stream.read(CHUNK_SIZE, exception_on_overflow=False)
     # Convert audio data to numpy array
     data = np.frombuffer(data, dtype=np.int16)
