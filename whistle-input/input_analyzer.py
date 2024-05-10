@@ -1,7 +1,7 @@
 from config import RATE
 import numpy as np
 
-THRESHOLD = 100
+THRESHOLD = 30
 FREQUENCY_THRESHOLD = 400
 
 
